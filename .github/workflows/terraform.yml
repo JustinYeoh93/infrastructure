@@ -10,6 +10,11 @@ on:
     paths:
       - tfcloud/*
 
+defaults:
+  run:
+    shell: bash
+    working-directory: tfcloud
+
 jobs:
   terraform:
     name: "Terraform"
