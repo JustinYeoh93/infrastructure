@@ -1,7 +1,7 @@
 resource "tfe_workspace" "minecraft" {
     name = "minecraft"
     organization = data.tfe_organization.justinyeoh.name
-    tag_names = ["terraform-managed"]
+    tag_names = ["tf-managed"]
     allow_destroy_plan = false
     auto_apply = true
     execution_mode = "remote"
