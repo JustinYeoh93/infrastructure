@@ -1,3 +1,4 @@
+name: TF cloud automation
 on:
   push:
     branches:
