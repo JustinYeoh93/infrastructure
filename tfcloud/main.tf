@@ -21,7 +21,7 @@ resource "tfe_workspace" "random-var" {
 }
 
 resource "tfe_workspace" "random-var-2" {
-  name                  = test
+  name                  = "test"
   organization          = data.tfe_organization.justinyeoh.name
   description           = var.random_var
   tag_names             = ["tfmanaged"]
