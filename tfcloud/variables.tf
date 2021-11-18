@@ -8,6 +8,6 @@ variable "token" {
 variable "random_var" {
   type        = string
   default     = ""
-  description = "Random token test"
+  description = "Random token test rotation"
   sensitive   = true
 }
