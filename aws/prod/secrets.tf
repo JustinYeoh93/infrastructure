@@ -1,5 +1,5 @@
 data "aws_secretsmanager_secret" "justin_secret" {
-  arn = "arn:aws:secretsmanager:ap-northeast-1:245185267610:secret:justin/secret-d7bO1O"
+  arn = "arn:aws:secretsmanager:ap-northeast-1:021498413756:secret:justin/secret-XyxJVU"
 }
 
 data "aws_secretsmanager_secret_version" "s3_prod_secret" {
