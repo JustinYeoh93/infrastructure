@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "test" {
-  bucket = "lal-test-bucket"
+  bucket = "liuandliu-bucket-for-testing"
   acl    = "private"
 
   tags = {
