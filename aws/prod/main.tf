@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "b" {
   acl           = "private"
 
   tags = {
-    Name        = var.aws_secretsmanager_secret_version.s3_prod_secret
+    Name        = data.aws_secretsmanager_secret_version.justin_secret.secret_string
     Environment = "prod"
   }
 }
