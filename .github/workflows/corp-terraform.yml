@@ -26,8 +26,6 @@ jobs:
     name: "Terraform"
     runs-on: ubuntu-latest
     steps:
-      - name: Check secrets
-        run: echo ${{ env.AWS_ACCESS_KEY_ID }} / {{ env.AWS_DEFAULT_REGION}}
       - name: Checkout
         uses: actions/checkout@v2
 
