@@ -7,5 +7,5 @@ data "aws_secretsmanager_secret_version" "s3_prod_secret" {
 }
 
 output "name" {
-  value = data.aws_secretsmanager_secret_version.justin_secret.secret_string
+  value = data.aws_secretsmanager_secret_version.s3_prod_secret.secret_string
 }
