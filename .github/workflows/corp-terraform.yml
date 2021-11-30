@@ -19,12 +19,15 @@ defaults:
 env:
   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+  AWS_DEFAULT_REGION: "ap-northeast-1"
 
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
     steps:
+      - name: Check secrets
+        run: echo ${{ env.AWS_ACCESS_KEY_ID }} / {{ env.AWS_DEFAULT_REGION}}
       - name: Checkout
         uses: actions/checkout@v2
 
