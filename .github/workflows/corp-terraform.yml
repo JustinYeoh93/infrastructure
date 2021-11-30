@@ -1,4 +1,4 @@
-name: TF cloud automation
+name: AWS corp account terraform
 on:
   push:
     branches:
@@ -51,11 +51,6 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan
-        continue-on-error: true
-
-      - name: Terraform Plan Status
-        if: steps.plan.outcome == 'failure'
-        run: exit 1
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
