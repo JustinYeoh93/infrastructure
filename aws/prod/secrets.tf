@@ -10,3 +10,7 @@ output "name" {
   value     = data.aws_secretsmanager_secret_version.s3_prod_secret.secret_string
   sensitive = true
 }
+
+output "id" {
+    value = data.aws_secretsmanager_secret.justin_secret.id
+}
