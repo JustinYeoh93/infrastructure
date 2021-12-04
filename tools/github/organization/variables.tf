@@ -4,6 +4,12 @@ variable "admins" {
   description = "Admins of the organization"
 }
 
+variable "members" {
+  type        = list(string)
+  default     = []
+  description = "Members of the organization"
+}
+
 variable "teams" {
   type = map(object({
     name           = string

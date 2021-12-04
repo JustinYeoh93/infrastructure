@@ -1,8 +1,4 @@
 locals {
-  members = setunion(flatten([
-    for _id, team in var.teams : concat(team.members, team.maintainers)
-  ]))
-
   team_members = flatten([
     for tf_id, team in var.teams : [
       for member in team.members : {

@@ -7,7 +7,7 @@ resource "github_membership" "admins" {
 
 # Organization Members
 resource "github_membership" "members" {
-  for_each = { for member in local.members : member => member }
+  for_each = { for member in var.members : member => member }
   username = each.key
   role     = "member"
 }
