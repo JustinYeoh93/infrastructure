@@ -4,17 +4,17 @@ on:
     branches:
       - master
     paths:
-      - tfcloud/*
+      - tools/tfcloud/*
   pull_request:
     branches:
       - master
     paths:
-      - tfcloud/*
+      - tools/tfcloud/*
 
 defaults:
   run:
     shell: bash
-    working-directory: tfcloud
+    working-directory: tools/tfcloud
 
 jobs:
   terraform:
@@ -24,9 +24,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Get terraform version
+        id: tfver
+        run: echo "::set-output name=tfver::`cat $GITHUB_WORKSPACE/.terraform-version`"
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
+          terraform_version: ${{ steps.tfver.outputs.tfver }}
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Format
