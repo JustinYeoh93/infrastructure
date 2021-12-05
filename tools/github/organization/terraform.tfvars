@@ -14,7 +14,6 @@ members = {
 teams = {
   id1 = {
     name        = "monitoring"
-    description = ""
     privacy     = "closed"
     members     = [
       "jingjing7065"
