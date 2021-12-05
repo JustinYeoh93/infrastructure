@@ -1,7 +1,7 @@
 # The admins of this organization
 admins = [
   "JustinYeoh93",
-  "y-aok"
+  "justin-machine-user"
 ]
 
 members = [
@@ -14,19 +14,15 @@ teams = {
     name        = "multiplayer-api"
     description = "oya oya"
     privacy     = "secret"
-    members     = []
-    maintainers = [
-      "y-aok"
-    ]
+    members     = ["justin-machine-user"]
+    maintainers = []
   }
 
   id2 = {
     name        = "singular-team"
     description = "oya oya oya"
     privacy     = "closed"
-    members = [
-      "y-aok"
-    ]
+    members = ["justin-machine-user"]
     maintainers = []
   }
 }

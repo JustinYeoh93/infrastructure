@@ -1,4 +1,11 @@
 terraform {
+  backend "s3" {
+    bucket         = "liuandliu-statefiles"
+    key            = "github/organization"
+    region         = "ap-northeast-1"
+    dynamodb_table = "tf-lock"
+  }
+
   required_providers {
     github = {
       source  = "integrations/github"
