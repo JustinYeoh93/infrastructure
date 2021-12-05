@@ -1,5 +1,7 @@
-output "teams" {
-  value       = github_team.teams
+output "teams_id" {
+  value       = {
+    for k, v in github_team.teams : v.name => v.id
+  }
   description = "description"
 }
 
