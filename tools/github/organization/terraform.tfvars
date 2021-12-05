@@ -1,6 +1,11 @@
 # The admins of this organization
 admins = [
-  "JustinYeoh93"
+  "JustinYeoh93",
+  "y-aok"
+]
+
+members = [
+
 ]
 
 # The team
@@ -22,8 +27,6 @@ teams = {
     members = [
       "y-aok"
     ]
-    maintainers = [
-      "erich19201"
-    ]
+    maintainers = []
   }
 }

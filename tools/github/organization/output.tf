@@ -3,6 +3,8 @@ output "teams" {
   description = "description"
 }
 
-output "members" {
-  value = data.github_user.members
+output "members_id" {
+  value = {
+    for k, v in data.github_user.all : k => v.id
+  }
 }
