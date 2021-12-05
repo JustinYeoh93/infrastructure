@@ -17,7 +17,7 @@ variable "teams" {
     privacy        = string
     parent_team_id = optional(string)
     members        = list(string)
-    maintainers    = optional(list(string))
+    maintainers    = list(string)
   }))
   default     = {}
   description = "Organization team and its members. Privacy is either closed or secret."
