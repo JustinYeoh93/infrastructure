@@ -9,15 +9,3 @@ data "aws_secretsmanager_secret_version" "s3_prod_secret" {
 data "aws_ssm_parameter" "foo" {
   name = "/foo/bar"
 }
-
-output "ssm_parameter" {
-  value = data.aws_ssm_parameter.foo.value
-}
-
-output "name" {
-  value     = data.aws_secretsmanager_secret_version.s3_prod_secret.secret_string
-}
-
-output "id" {
-    value = data.aws_secretsmanager_secret.justin_secret.id
-}
