@@ -14,15 +14,15 @@ teams = {
     name        = "multiplayer-api"
     description = "oya oya"
     privacy     = "secret"
-    members     = ["justin-machine-user"]
-    maintainers = []
+    members     = []
+    maintainers = ["justin-machine-user"]
   }
 
   id2 = {
     name        = "singular-team"
     description = "oya oya oya"
     privacy     = "closed"
-    members = ["justin-machine-user"]
-    maintainers = []
+    members = []
+    maintainers = ["justin-machine-user"]
   }
 }
