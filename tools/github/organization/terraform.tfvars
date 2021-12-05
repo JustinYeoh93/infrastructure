@@ -13,9 +13,9 @@ members = {
 
 teams = {
   id1 = {
-    name        = "monitoring"
-    privacy     = "closed"
-    members     = [
+    name    = "monitoring"
+    privacy = "closed"
+    members = [
       "jingjing7065"
     ]
     maintainers = [
