@@ -8,7 +8,7 @@ resource "github_repository_environment" "environments" {
   }
 
   dynamic "reviewers" {
-    for_each = each.value.reviewers
+    for_each = (each.value.reviewers.teams == [] && each.value.reviewers.users == []) ? [] : [1]
     content {
       teams = each.value.reviewers.teams == [] ? null : data.team_name_team_id_db[each.value.reviewers.teams]
       users = each.value.reviewers.users == [] ? null : each.value.reviewers.users

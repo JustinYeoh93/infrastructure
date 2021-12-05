@@ -7,10 +7,10 @@ resource "github_membership" "memberships" {
 
 # Organization Team
 resource "github_team" "teams" {
-  for_each       = { for tf_id, team in var.teams : tf_id => team } # Not using name as key because there are the potential of team changes
-  name           = each.value.name
-  description    = each.value.description
-  privacy        = each.value.privacy
+  for_each    = { for tf_id, team in var.teams : tf_id => team } # Not using name as key because there are the potential of team changes
+  name        = each.value.name
+  description = each.value.description
+  privacy     = each.value.privacy
 }
 
 # Team memberships

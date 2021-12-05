@@ -165,7 +165,7 @@ variable "collaborators" {
 }
 
 # CodeOwner
-variable "codeowners" {
+variable "codeowner" {
   type        = string
   default     = ""
   description = "CODEOWNERS of this repository. Usually Tech Lead will take this position. They can then fine tune it if needed."
@@ -186,46 +186,61 @@ variable "repository_secrets" {
 variable "environments" {
   type = list(object({
     name = string
-    reviewers = list(object({
+    reviewers = object({
       teams = list(string)
       users = list(string)
-    }))
+    })
     secrets = list(object({
       name      = string
       encrypted = bool
       value     = string
     }))
-    protected_branches_only = true
+    protected_branches_only = bool
   }))
   default     = []
-  description = "Environment definition for the repository."
-}
-
-# Default branch name
-variable "default_branch" {
-  type        = string
-  default     = ""
-  description = "The name of the default branch of the repository."
+  description = "Environment definition for the repository. If not defined, then use default"
 }
 
 # Branch protections
 variable "branch_protections" {
   type = list(object({
+    id                      = string
     pattern                 = string
-    enforce_admins          = bool
-    required_signed_commits = bool
-    required_linear_history = bool
-    required_status_check = object({
-      strict   = bool
-      contexts = list(string)
-    })
-    required_pull_request_reviews = object({
-      dismiss_stale_reviews           = bool
-      restrict_dismissals             = bool
-      require_code_owner_reviews      = bool
+    enforce_admins          = optional(bool)
+    required_signed_commits = optional(bool)
+    required_linear_history = optional(bool)
+    required_status_check = optional(object({
+      strict   = optional(bool)
+      contexts = optional(list(string))
+    }))
+    required_pull_request_reviews = optional(object({
+      dismiss_stale_reviews           = optional(bool)
+      require_code_owner_reviews      = optional(bool)
       required_approving_review_count = number
-    })
+    }))
+    allow_deletions    = optinal(bool)
+    allow_force_pushes = optional(bool)
   }))
-  default     = []
-  description = "Branch protection information"
+  default = [
+    {
+      name    = "production"
+      pattern = "master"
+      required_pull_request_reviews = {
+        required_approving_review_count = 1
+        require_code_owner_reviews      = true
+      }
+      required_status_check = true
+    },
+    {
+      name                  = "staging"
+      pattern               = "release/*"
+      required_status_check = true
+      allow_deletions       = true
+    },
+    {
+      name    = "development"
+      pattern = "develop"
+    }
+  ]
+  description = "Branch protection information. If not defined then use default."
 }
