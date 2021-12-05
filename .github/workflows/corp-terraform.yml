@@ -1,4 +1,4 @@
-name: AWS corp account terraform
+name: AWS corp account terraform test
 on:
   push:
     branches:
