@@ -3,8 +3,8 @@ variable "members" {
     admins  = list(string)
     members = list(string)
   })
-  default     = {
-    admins = []
+  default = {
+    admins  = []
     members = []
   }
   description = "Members of the organization"
