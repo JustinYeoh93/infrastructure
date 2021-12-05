@@ -11,7 +11,6 @@ resource "github_team" "teams" {
   name           = each.value.name
   description    = each.value.description
   privacy        = each.value.privacy
-  parent_team_id = each.value.parent_team_id ? github_team.teams[each.value.parent_team_id].id : null
 }
 
 # Team memberships

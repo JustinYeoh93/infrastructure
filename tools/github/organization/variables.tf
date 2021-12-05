@@ -15,7 +15,6 @@ variable "teams" {
     name           = string
     description    = optional(string)
     privacy        = string
-    parent_team_id = optional(string)
     members        = list(string)
     maintainers    = list(string)
   }))
