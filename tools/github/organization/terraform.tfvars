@@ -10,3 +10,17 @@ members = {
     "jingjing7065"
   ]
 }
+
+teams = {
+  id1 = {
+    name        = "monitoring"
+    description = ""
+    privacy     = "closed"
+    members     = [
+      "jingjing7065"
+    ]
+    maintainers = [
+      "JustinYeoh93"
+    ]
+  }
+}

@@ -12,13 +12,13 @@ variable "members" {
 
 variable "teams" {
   type = map(object({
-    name           = string
-    description    = optional(string)
-    privacy        = string
-    parent_team_id = optional(string)
-    members        = list(string)
-    maintainers    = optional(list(string))
+    name             = string
+    description      = optional(string)
+    privacy          = string
+    parent_team_name = optional(string)
+    members          = list(string)
+    maintainers      = optional(list(string))
   }))
   default     = {}
-  description = "Organization team and its members"
+  description = "Organization team and its members. Privacy is either closed or secret."
 }
