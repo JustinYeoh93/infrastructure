@@ -1,5 +1,8 @@
 output "teams" {
   value       = github_team.teams
   description = "description"
-  depends_on  = []
+}
+
+output "members" {
+  value = data.github_user.members
 }

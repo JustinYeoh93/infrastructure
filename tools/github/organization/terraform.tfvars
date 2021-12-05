@@ -3,20 +3,16 @@ admins = [
   "JustinYeoh93"
 ]
 
-members = [
-  "Erich93"
-]
-
 # The team
 teams = {
   id1 = {
     name        = "multiplayer-api"
     description = "oya oya"
     privacy     = "secret"
-    members = [
-      "Erich93"
+    members     = []
+    maintainers = [
+      "y-aok"
     ]
-    maintainers = []
   }
 
   id2 = {
@@ -24,8 +20,10 @@ teams = {
     description = "oya oya oya"
     privacy     = "closed"
     members = [
-      "Potato63"
+      "y-aok"
     ]
-    maintainers = ["Erich03"]
+    maintainers = [
+      "erich19201"
+    ]
   }
 }
