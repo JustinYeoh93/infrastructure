@@ -19,6 +19,5 @@ resource "github_repository" "repository" {
   archived               = var.archived
   archive_on_destroy     = var.archive_on_destroy
   topics                 = var.topics
-  template               = var.template == {} ? null : var.template
   vulnerability_alerts   = var.vulnerability_alerts
 }

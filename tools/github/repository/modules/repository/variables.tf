@@ -112,22 +112,10 @@ variable "archive_on_destroy" {
   description = "(Optional) Set to true to archive the repository instead of deleting on destroy."
 }
 
-variable "pages" {
-  type = object(any)
-  default     = {}
-  description = "(Optional) The repository's GitHub Pages configuration. See terraform docs for more info on how to set this up. Turned off by default."
-}
-
 variable "topics" {
   type        = list(string)
   default     = []
   description = "(Optional) The list of topics of the repository."
-}
-
-variable "template" {
-  type = object(any)
-  default     = {}
-  description = "(Optional) Use a template repository to create this resource. See terraform docs for more info on how to set this up. Turned off by default."
 }
 
 variable "vulnerability_alerts" {
@@ -195,7 +183,7 @@ variable "environments" {
 # Branch protections
 variable "branch_protections" {
   type = list(object({
-    id                      = string
+    id                      = string // Any random identifier
     pattern                 = string
     enforce_admins          = optional(bool)
     required_signed_commits = optional(bool)
@@ -214,7 +202,7 @@ variable "branch_protections" {
   }))
   default = [
     {
-      name    = "production"
+      id      = "production"
       pattern = "master"
       required_pull_request_reviews = {
         required_approving_review_count = 1
@@ -223,13 +211,13 @@ variable "branch_protections" {
       required_status_check = true
     },
     {
-      name                  = "staging"
+      id                    = "staging"
       pattern               = "release/*"
       required_status_check = true
       allow_deletions       = true
     },
     {
-      name    = "development"
+      id      = "development"
       pattern = "develop"
     }
   ]
