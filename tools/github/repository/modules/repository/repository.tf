@@ -18,7 +18,6 @@ resource "github_repository" "repository" {
   license_template       = var.license_template == "" ? null : var.license_template
   archived               = var.archived
   archive_on_destroy     = var.archive_on_destroy
-  pages                  = var.pages == {} ? null : var.pages
   topics                 = var.topics
   template               = var.template == {} ? null : var.template
   vulnerability_alerts   = var.vulnerability_alerts

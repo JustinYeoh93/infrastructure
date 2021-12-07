@@ -113,13 +113,7 @@ variable "archive_on_destroy" {
 }
 
 variable "pages" {
-  type = object({
-    source = object({
-      branch = string
-      path   = optional(string)
-    })
-    cname = optional(string)
-  })
+  type = object(any)
   default     = {}
   description = "(Optional) The repository's GitHub Pages configuration. See terraform docs for more info on how to set this up. Turned off by default."
 }
@@ -131,10 +125,7 @@ variable "topics" {
 }
 
 variable "template" {
-  type = object({
-    owner      = string
-    repository = string
-  })
+  type = object(any)
   default     = {}
   description = "(Optional) Use a template repository to create this resource. See terraform docs for more info on how to set this up. Turned off by default."
 }
@@ -157,8 +148,8 @@ variable "teams" {
 # Repository collaborator
 variable "collaborators" {
   type = list(object({
-    username   = ""
-    permission = ""
+    username   = string
+    permission = string
   }))
   default     = []
   description = "Association information of the collaborators in the repository."
@@ -218,7 +209,7 @@ variable "branch_protections" {
       require_code_owner_reviews      = optional(bool)
       required_approving_review_count = number
     }))
-    allow_deletions    = optinal(bool)
+    allow_deletions    = optional(bool)
     allow_force_pushes = optional(bool)
   }))
   default = [
