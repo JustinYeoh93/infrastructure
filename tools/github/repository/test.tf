@@ -1,4 +1,4 @@
 module "test" {
-  module = "./modules/repository"
+  source = "./modules/repository"
   name   = "test"
 }
