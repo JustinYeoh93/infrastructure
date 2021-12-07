@@ -212,7 +212,6 @@ variable "branch_protections" {
     {
       id                    = "staging"
       pattern               = "release/*"
-      required_status_check = true
       allow_deletions       = true
     },
     {
