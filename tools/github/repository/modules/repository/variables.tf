@@ -208,7 +208,6 @@ variable "branch_protections" {
         required_approving_review_count = 1
         require_code_owner_reviews      = true
       }
-      required_status_check = true
     },
     {
       id                    = "staging"
